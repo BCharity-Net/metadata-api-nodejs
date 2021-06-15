@@ -38,7 +38,7 @@ app.get('/api/token/:token_id', function(req, res) {
     },
     */
     'name': nft.name,
-    'description': nft.description
+    'description': nft.description,
     'image': `${HOST}/images/${tokenId}.png`
   }
   res.send(data)
