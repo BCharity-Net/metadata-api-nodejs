@@ -1,4 +1,4 @@
-const HOST = 'https://bc-placeholder-01.herokuapp.com/'
+const HOST = 'https://secure-tor-85504.herokuapp.com/'
 
 module.exports = {
   HOST
