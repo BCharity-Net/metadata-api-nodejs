@@ -52,7 +52,7 @@ app.get('/api/token/:token_id', function(req, res) {
 
     'image': `${HOST}/images/${tokenIdMod}.png`
   }
-  res.send(data)
+  res.json(data)
 })
 
 app.listen(app.get('port'), function() {
