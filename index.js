@@ -26,7 +26,11 @@ app.get('/api/token/:token_id', function(req, res) {
   const month = parseInt(bdayParts[0])
   */
   const tokenId = parseInt(req.params.token_id).toString()
-  const nft = db[tokenId]
+
+  // one line to prevent linking to non-existent database values, remove when no longer necessary
+  const tokenIdMod = tokenId%4
+
+  const nft = db[tokenIdMod]
   const data = 
   {
     /*
@@ -42,7 +46,7 @@ app.get('/api/token/:token_id', function(req, res) {
     'name': nft.name,
     'description': nft.description,
 
-    'image': `${HOST}/images/${tokenId}.png`
+    'image': `${HOST}/images/${tokenIdMod}.png`
   }
   res.send(data)
 })
