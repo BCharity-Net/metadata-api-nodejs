@@ -15,15 +15,17 @@ const app = express()
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', function(req, res) {
-  res.send('Currently testing, please stand by');
+  res.send('Testing, please hold');
 })
 
 app.get('/api/token/:token_id', function(req, res) {
   const tokenId = parseInt(req.params.token_id).toString()
-  // const person = db[tokenId]
-  // const bdayParts = person.birthday.split(' ')
-  // const day = parseInt(bdayParts[1])
-  // const month = parseInt(bdayParts[0])
+  /*
+  const person = db[tokenId]
+  const bdayParts = person.birthday.split(' ')
+  const day = parseInt(bdayParts[1])
+  const month = parseInt(bdayParts[0])
+  */
   const nft = db[tokenID]
   const data = {
     /*
