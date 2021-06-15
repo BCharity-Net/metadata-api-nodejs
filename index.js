@@ -19,18 +19,20 @@ app.get('/', function(req, res) {
 })
 
 app.get('/api/token/:token_id', function(req, res) {
-  const tokenId = parseInt(req.params.token_id).toString()
   /*
   const person = db[tokenId]
   const bdayParts = person.birthday.split(' ')
   const day = parseInt(bdayParts[1])
   const month = parseInt(bdayParts[0])
   */
-  const nft = db[tokenID]
-  const data = {
+  const tokenId = parseInt(req.params.token_id).toString()
+  const nft = db[tokenId]
+  const data = 
+  {
     /*
     'name': person.name,
-    'attributes': {
+    'attributes': 
+    {
       'birthday': person.birthday,
       'birth month': monthName(month),
       'zodiac sign': zodiac(day, month),
@@ -39,6 +41,7 @@ app.get('/api/token/:token_id', function(req, res) {
     */
     'name': nft.name,
     'description': nft.description,
+
     'image': `${HOST}/images/${tokenId}.png`
   }
   res.send(data)
