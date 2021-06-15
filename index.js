@@ -27,8 +27,12 @@ app.get('/api/token/:token_id', function(req, res) {
   */
   const tokenId = parseInt(req.params.token_id).toString()
 
-  // one line to prevent linking to non-existent database values, remove when no longer necessary
-  const tokenIdMod = tokenId%4
+  // a few lines to prevent linking to non-existent database values, remove when no longer necessary
+  var tokenIDCreator = tokenId%4;
+  if(tokenIDCreator == 0){
+     tokenIDCreator += 4;
+  }
+  const tokenIdMod = tokenIDCreator
 
   const nft = db[tokenIdMod]
   const data = 
